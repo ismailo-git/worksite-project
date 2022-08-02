@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de pointages
+{% endblock %}
+
+{% block body %}
+
+	<div class="row justify-content-center align-items-center mt-5">
+		<a href="{{path('create_pointage')}}" class="btn btn-primary">Créer un pointage</a>
+ 	</div>  
+	<div class="row mt-5">
+		{% for pointage in pointages %}
+			<div class="col-3 card border-primary border py-4 px-4 m-1" style="max-width: 16rem;">
+
+				<div>
+					<p style="font-size: 18px">Chantier :
+						<span class="text-primary text-lg" style="font-weight: bold">{{pointage.chantier}}</span>
+					</p>
+					<p>Employé :
+						<span>{{pointage.user.firstname}}</span>
+					</p>
+					<p>Date de pointage :
+						{{pointage.date |date("m/d/Y")}}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

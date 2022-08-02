@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div>
+		<a href="{{path('user_create')}}" class="btn btn-success mt-5 mb-3 block">Créer un utilisateur</a>
+	</div>
+	
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Nom</th>
+				<th scope="col">Prénom</th>
+				<th scope="col">Matricule</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr class="table-primary">
+					<th>{{user.firstname}}</th>
+					<td>{{user.lastname}}</td>
+					<td>{{user.matricule}}</td>
+					<td>
+						<a href="{{path('user_edit', {'id': user.id})}}" class="btn btn-success">Modifier</a>
+						<a href="{{path('user_show', {'id': user.id})}}" class="btn btn-info">Voir</a>
+						<a href="{{path('user_delete', {'id':user.id})}}" class="btn btn-danger">Supprimer</a>
+
+					</td>
+
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

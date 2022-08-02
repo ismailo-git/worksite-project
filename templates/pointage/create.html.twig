@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pointage : Créer
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			{% for flashError in app.flashes('verify_email_error') %}
+				<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+			{% endfor %}
+
+			<h1 class="mt-5">Créer une pointage</h1>
+			{{form_start(formPointage)}}
+			<div class="form-group">
+				<label for="">Date</label>
+				{{form_errors(formPointage.date)}}
+				{{form_widget(formPointage.date)}}
+			</div>
+
+			<div class="form-group">
+				<label for="">Début de pointage</label>
+				{{form_widget(formPointage.startsAt)}}
+				{{form_errors(formPointage.startsAt)}}
+			</div>
+			<div class="form-group">
+				<label for="">Fin de pointage</label>
+				{{ form_widget(formPointage.endsAt) }}
+				{{form_errors(formPointage.endsAt)}}
+			</div>
+			<div class="form-group">
+				{{ form_row(formPointage.chantier)}}
+			</div>
+			<button type="submit" class="btn btn-lg btn-primary">Pointer</button>
+			{{ form_end(formPointage) }}
+		</div>
+	</div>
+
+{% endblock %}

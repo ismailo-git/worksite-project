@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChantierController!
+{% endblock %}
+
+{% block body %}
+	
+	<div class="card border-info mb-3 mt-5" style="max-width: 20rem;">
+		<div class="card-header">Chantier Information</div>
+		<div class="card-body">
+			<h4 class="card-title">Nom du chantier : {{chantier.name}}</h4>
+			<h5>{{chantier.address}}</h5>
+			<p class="lead">Date du démarrage : {{chantier.startsAt|date("m/d/Y")}}</p>
+		</div>
+	</div>
+{% endblock %}

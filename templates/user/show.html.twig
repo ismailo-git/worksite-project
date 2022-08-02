@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChantierController!
+{% endblock %}
+
+{% block body %}
+	
+	<div class="card border-info mb-3 mt-5" style="max-width: 20rem;">
+		<div class="card-header">Information utilisateur</div>
+		<div class="card-body">
+			<h5 class="card-title">Nom : {{user.firstname}}</h5>
+			<h5 class="card-title">Prenom : {{user.lastname}}</h5>
+			<h5 class="card-title">Matricule : {{user.matricule}}</h5>
+			
+		</div>
+	</div>
+{% endblock %}

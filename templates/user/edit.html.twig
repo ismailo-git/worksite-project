@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+	<h2>Modification de l'utilisateur {{user.firstname}}</h2>
+	{{form_start(user_form)}}
+	{{form_widget(user_form)}}
+	{{form_end(user_form)}}
+
+{% endblock %}
